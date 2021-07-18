@@ -19,14 +19,20 @@
                 <h1 class="header-container__h1">El faro</h1>
                 <p class="header-container__p">cafeteria</p>
             </div>
-            <img class="header-icono" src="./imagenes/menu.png" alt="">
+            <a class="header-icono" href="#header-nav"><img  src="./imagenes/menu.png" alt=""></a>
+            
+            <div id="header-nav" class="header-nav">
+                <a class="header-nav__link" href="#menu-display">Menú</a>
+                <a class="header-nav__link" href="#ubicacion-display">Ubicación</a>
+                <a class="header-nav__link" href="#footer-display">Contacto</a>
+            </div>
          </header>
 
          <section class="carousel">
              <img class="carousel-img__1" src="./imagenes/el faro.jpg" alt="">
          </section>
 
-        <section class="menu">
+        <section id="menu-display" class="menu">
             <h2 class="menu-h2">Nuestro menú</h2>
             <div class="menu-container">
                 <a class="menu-container__bebidas" href="">Bebidas</a>
@@ -35,59 +41,83 @@
             </div>
             <div class="menu-container__cards">
                 <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-capuchino.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Capuchino</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-con-leche.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Con Leche</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-con-miel.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Con Miel</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-cortado.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Cortado</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-expreso.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Expreso</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-lagrima.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Lagrima</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-moka.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Moka</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-vienes.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Vienés</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-americano.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Americano</h4>
+                    <p class="card-p">$150</p>
+                </div>
+                <div class="card">
+                    <img class="card-img" src="./imagenes/cafe-bonbon.jpg" alt="capuchino">
+                    <h4 class="card-h4">Café Bombón</h4>
+                    <p class="card-p">$150</p>
+                </div>
 
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
-                <div class="card">
-                    
-                </div>
+                
                 
             </div>
 
         </section>
 
-        <section class="ubicacion">
+        <section id="ubicacion-display" class="ubicacion">
             <h2 class="ubicacion-h2">Encontranos acá</h2>
-            <img class="ubicacion-img" src="" alt="">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.0440296498255!2d-56.68248938471233!3d-36.72150377996489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c6f6408e6ad2b%3A0xf46101992fbb0355!2sEl%20Faro%20Cafeter%C3%ADa!5e0!3m2!1ses!2sar!4v1626571985561!5m2!1ses!2sar" width="94%" height="75%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
 
-        <footer class="footer">
+        <footer id="footer-display" class="footer">
             <div class="footer-contacto">
                 <h2 class="footer-contacto__h2">Contacto</h2>
-                <p class="footer-contacto__link">Tel : 02257-6047</p>
-                <p class="footer-contacto__link">Insta : @CafeteriaElFaro</p>
-                <p class="footer-contacto__link">Face :ElFaroCafeteria</p>
+            <div class="footer-contacto__div">
+                <p class="footer-contacto__div--link">Tel : 02257-6047</p>
+                <p class="footer-contacto__div--link">Insta : @CafeteriaElFaro</p>
+                <p class="footer-contacto__div--link">Face :ElFaroCafeteria</p>
             </div>
-            <div class="footer-horarios">
-                <h2 class="footer-horarios__h2">Horarios</h2>
-                <p class="footer-horarios__dias">De Lunes a Lunes</p>
-                <p class="footer-horarios__hs">De 7 AM a 3 AM</p>
+                
+            </div>
+                <div class="footer-horarios">
+                    <h2 class="footer-horarios__h2">Horarios</h2>
+                <div class="footer-horarios__div">
+                    <p class="footer-horarios__div--dias">De Lunes a Lunes</p>
+                <p class="footer-horarios__div--hs">De 7 AM a 3 AM</p>
+                </div>
             </div>
         </footer>
     </div>
