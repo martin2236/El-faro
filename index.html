@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El faro</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./index.js"></script>
+    <script defer src="./index.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
                 <h1 class="header-container__h1">El faro</h1>
                 <p class="header-container__p">cafeteria</p>
             </div>
-            <a class="header-icono" href="#header-nav"><img  src="./imagenes/menu.png" alt=""></a>
+            <img class="header-icono"  src="./imagenes/menu.png" alt="">
             
             <div id="header-nav" class="header-nav">
                 <a class="header-nav__link" href="#menu-display">Menú</a>
@@ -34,66 +34,27 @@
 
         <section id="menu-display" class="menu">
             <h2 class="menu-h2">Nuestro menú</h2>
-            <div class="menu-container">
-                <a class="menu-container__bebidas" href="">Bebidas</a>
-                <a class="menu-container__platos" href="">Platos</a>
-                <a class="menu-container__postres" href="">Postres</a>
-            </div>
+            
             <div class="menu-container__cards">
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-capuchino.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Capuchino</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-con-leche.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Con Leche</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-con-miel.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Con Miel</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-cortado.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Cortado</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-expreso.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Expreso</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-lagrima.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Lagrima</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-moka.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Moka</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-vienes.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Vienés</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-americano.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Americano</h4>
-                    <p class="card-p">$150</p>
-                </div>
-                <div class="card">
-                    <img class="card-img" src="./imagenes/cafe-bonbon.jpg" alt="capuchino">
-                    <h4 class="card-h4">Café Bombón</h4>
-                    <p class="card-p">$150</p>
-                </div>
-
-                
+            
+              
+            <template class="submenu">
+                 <div class="card">
+                    <p class="card-h4">Bebidas</p>
+                   <a class="a" href=""><img class="triangulo" src="./imagenes/triangle.png" alt=""></a>
+                  </div>
+            </template>
                 
             </div>
+           
+            <template>
+                    <div class="card-2">
+                    <img class="card-img-2" src="./imagenes/cafe-capuchino.jpg" alt="capuchino">
+                    <h4 class="card-h4-2">Café Capuchino</h4>
+                    <p class="card-p-2">$150</p>
+                </div>
+            </template>
+
 
         </section>
 
