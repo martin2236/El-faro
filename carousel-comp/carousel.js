@@ -1,5 +1,7 @@
 function crearCarousel (){
     
+
+    
     window.addEventListener("load",function(){
     new Glider(document.querySelector(".carousel__lista"),{
         slidesToShow: 1,
