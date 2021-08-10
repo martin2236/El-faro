@@ -5,48 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El faro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.css" integrity="sha512-xcz2kgNDovRs9/wYWii2XSBEDlpaTq99iewiGN3PR/pNnPaSDiw6wHpXU0kFyonevdVj/MkeesxMII8sgolFCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.7.7/glider.min.js" integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./nav-comp/nav.css">
+    <script defer src="./nav-comp/nav-comp.js"></script>
+    <link rel="stylesheet" href="./footer-comp/footer.css">
+    <script defer src="./footer-comp/footer.js"></script>
+    <script defer src="./carousel-comp/carousel.js"></script>
     <link rel="stylesheet" href="./index.css">
     <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <img class="header-logo" src="" alt="">
-            <div class="header-container">
-                <h1 class="header-container__h1">El faro</h1>
-                <p class="header-container__p">cafeteria</p>
-            </div>
-            <img class="header-icono"  src="./imagenes/menu.png" alt="">
-            
-            <div id="header-nav" class="header-nav">
-                <a class="header-nav__link" href="#menu-display">Menú</a>
-                <a class="header-nav__link" href="#ubicacion-display">Ubicación</a>
-                <a class="header-nav__link" href="#footer-display">Contacto</a>
-            </div>
-         </header>
-
-         <section class="carousel">
-             <img class="carousel-img__1" src="./imagenes/el faro.jpg" alt="">
-         </section>
+       <div class="contenedor"></div>
+       
+         
+         <div class="carousel">
+             <div class="carousel__contenedor">
+                <button aria-label="anterior" class="carousel__anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+    
+                <div class="carousel__lista">
+                    <div class="carousel__elemento">
+                        <img class="carousel-img__1" src="./imagenes/el faro.jpg" alt="El-faro bar">
+                    </div>
+                    <div class="carousel__elemento">
+                        <img class="carousel-img__1" src="./imagenes/el faro bar.jpg" alt="El-faro bar">
+                    </div>
+                    <div class="carousel__elemento">
+                        <img class="carousel-img__1" src="./imagenes/el faro bar 2.jpg" alt="El-faro bar">
+                    </div>
+                </div>
+    
+                <button aria-label="siguiente" class="carousel__siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+             </div>
+             <div role="tablist" id="indicadores" class="carousel__indicadores"></div>
+         </div>
+         
 
         <section id="menu-display" class="menu">
             <h2 class="menu-h2">Nuestro menú</h2>
             
-            <div class="menu-container__cards">
-            
-              
+        <div class="menu-container__cards">
             <template class="submenu">
-                 <div class="card">
+                <div class="card">
                     <p class="card-h4">Bebidas</p>
-                   <a class="a" href=""><img class="triangulo" src="./imagenes/triangle.png" alt=""></a>
-                  </div>
+                    <a id="link" class="a" href=""><img class="triangulo" src="./imagenes/triangle.png" alt=""></a>
+                </div>
             </template>
                 
             </div>
-           
+            
             <template>
                     <div class="card-2">
                     <img class="card-img-2" src="./imagenes/cafe-capuchino.jpg" alt="capuchino">
@@ -62,25 +78,9 @@
             <h2 class="ubicacion-h2">Encontranos acá</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.0440296498255!2d-56.68248938471233!3d-36.72150377996489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959c6f6408e6ad2b%3A0xf46101992fbb0355!2sEl%20Faro%20Cafeter%C3%ADa!5e0!3m2!1ses!2sar!4v1626571985561!5m2!1ses!2sar" width="94%" height="75%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
-
-        <footer id="footer-display" class="footer">
-            <div class="footer-contacto">
-                <h2 class="footer-contacto__h2">Contacto</h2>
-            <div class="footer-contacto__div">
-                <p class="footer-contacto__div--link">Tel : 02257-6047</p>
-                <p class="footer-contacto__div--link">Insta : @CafeteriaElFaro</p>
-                <p class="footer-contacto__div--link">Face :ElFaroCafeteria</p>
-            </div>
-                
-            </div>
-                <div class="footer-horarios">
-                    <h2 class="footer-horarios__h2">Horarios</h2>
-                <div class="footer-horarios__div">
-                    <p class="footer-horarios__div--dias">De Lunes a Lunes</p>
-                <p class="footer-horarios__div--hs">De 7 AM a 3 AM</p>
-                </div>
-            </div>
-        </footer>
+        
+        <div class="footer-cont"></div>
+        
     </div>
 </body>
 </html>

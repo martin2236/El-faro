@@ -10,71 +10,8 @@
     background-color: black;
     align-items: center;
 }
-.header{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+.contenedor{
     width: 100%;
-    height: 85px;
-    background-color: #755959;
-    align-items: center;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-.header-logo{
-    grid-column: 1/2;
-    
-}
-.header-container{
-    grid-column: 2/3;
-    display: grid;
-    grid-template-rows: 2fr 1fr;
-    justify-content: center;
-}
-.header-container__h1{
-    grid-row: 1/2;
-    height: 48px;
-    font-size: 48px;
-    font-weight: 800;
-    margin: 0;
-}
-.header-container__p{
-grid-row: 2/3;
-text-align: center;
-font-size: 14px;
-font-weight: 700;
-margin-top: 5px;
-}
-.header-icono{
-    margin: 0 auto;
-    height: 40px;
-    width: 40px;
-    grid-column: 3/4;
-}
-.header-nav{
-    position: absolute;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 150px;
-    margin-top: 50px;
-    background-color: rgba(255, 255, 255, .3);
-    width: 100px;
-    justify-content: center;
-    align-items: center;
-    margin-left: 72%;
-    border-radius: 10px;
-    display: none;
-}
-
-@media(min-width:666px){
-    .header-nav:target{
-        margin-left: 80%;
-    }
-}
-.header-nav__link{
-    border-bottom:2px solid #fff;
-    text-align: center;
-    padding: 5px;
-    border-radius: 5px;
 }
 
 
@@ -163,47 +100,32 @@ text-align: center;
     font-size: 36px;
     font-weight: 400;
 }
-.footer{
+.footer-cont{
     width: 100%;
-    background-color: #755959;
-    margin-top: 60px;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    display: grid;
-    grid-template-columns: auto auto;
 }
-.footer-contactos{
-grid-column: 1/2;
+
+.carousel__contenedor{
+    position: relative;
 }
-.footer-contacto__div{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-right: 2px solid #fff;
-}
-.footer-horarios{
-grid-column: 2/3;
-}
-.footer-horarios__h2, .footer-contacto__h2{
+.carousel__anterior,
+.carousel__siguiente{
+    position: absolute;
+    display: block;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    top: calc(50% - 35px);
+    cursor: pointer;
+    line-height: 30px;
     text-align: center;
+    background: none;
+    opacity: 50%;
 }
-.footer-horarios__div{
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.carousel__anterior{
+    z-index: 100;
+    left: 1px;
 }
-.a{ 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-left: solid 4px #000;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #fff;
-}
-.triangulo{
-    width: 30px;
-    height: 30px;
+.carousel__siguiente{
+    right: 1px;
 }
