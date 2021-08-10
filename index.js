@@ -34,7 +34,7 @@ crearNav()
 crearFooter()
 const botonMenu = document.querySelector(".header-icono")
 const menuOculto = document.querySelector(".header-nav")
-const botonClose = document.querySelector(".header-nav__close")
+
 
 //envia la data de contentful para crear los sub menus
 getContentful().then((submenu)=>{
@@ -45,14 +45,14 @@ getContentful().then((submenu)=>{
 //bones menu mobile
 botonMenu.addEventListener("click",(e)=>{
     e.stopPropagation()
-    botonMenu.style.display = "none"
-    menuOculto.style.display = "inherit"
+    if(menuOculto.style.display == "none" ){
+      return  menuOculto.style.display = "inherit"
+    } else {
+        return menuOculto.style.display = "none"
+    }
+    
 })
-botonClose.addEventListener("click",(e)=>{
-    e.stopPropagation()
-    botonMenu.style.display = "inherit"
-    menuOculto.style.display = "none"
-})
+
 
 
 

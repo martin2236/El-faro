@@ -41,15 +41,16 @@ margin-top: 5px;
 
 .header-nav{
     position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 150px;
+    grid-template-rows:1fr 1fr 1fr 1fr;
     margin-top: 30px;
-    background-color: rgba(255, 255, 255, .3);
-    width: 100px;
-    justify-content: center;
+    background-color: #755959;
+     justify-content: center;
     align-items: center;
-    margin-left: 72%;
     border-radius: 10px;
     display: none;
     z-index: 1000;
@@ -67,6 +68,8 @@ margin-top: 5px;
     text-align: center;
     padding: 5px;
     border-radius: 5px;
+    font-size: 35px;
+    font-weight: 500;
 }
 @media(min-width:666px){
     .header-nav__link{

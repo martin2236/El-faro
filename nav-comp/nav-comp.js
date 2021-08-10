@@ -12,7 +12,6 @@ nav.innerHTML = `
 <img class="header-icono"  src="./imagenes/menu.png" alt="menú">
 
 <div id="header-nav" class="header-nav">
-    <img class="header-nav__close" src="./imagenes/close.png" alt="cerrar">
     <a class="header-nav__link" href="#menu-display">Menú</a>
     <a class="header-nav__link" href="#ubicacion-display">Ubicación</a>
     <a class="header-nav__link" href="#footer-display">Contacto</a>
