@@ -34,7 +34,7 @@ crearNav()
 crearFooter()
 const botonMenu = document.querySelector(".header-icono")
 const menuOculto = document.querySelector(".header-nav")
-
+const contenedor = document.querySelector(".container")
 
 //envia la data de contentful para crear los sub menus
 getContentful().then((submenu)=>{
@@ -42,7 +42,7 @@ getContentful().then((submenu)=>{
             agregarSubMenu(r)
         }
 })
-//bones menu mobile
+//botones menu mobile
 botonMenu.addEventListener("click",(e)=>{
     e.stopPropagation()
     if(menuOculto.style.display == "none" ){
@@ -50,11 +50,14 @@ botonMenu.addEventListener("click",(e)=>{
     } else {
         return menuOculto.style.display = "none"
     }
-    
 })
 
-
-
+contenedor.addEventListener("touchmove",(e)=>{
+    e.stopPropagation()
+        if(menuOculto.style.display == "inherit" ){
+            return menuOculto.style.cssText = "display:none; transition: .9s;"
+        }
+})
 
 }
 main()

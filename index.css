@@ -20,10 +20,83 @@
     width: 346px;
     height: 335px;
 }
+@media(min-width:666px){
+    .carousel{
+        margin-top: 30px;
+        width: 80%;
+        height: 335px;
+    }
+    
+}
+@media(min-width:900px){
+    .carousel{
+        margin-top: 30px;
+        width: 80%;
+        height: 535px;
+    }
+}
+
 .carousel-img__1{
     width: 346px;
     height: 335px;
 }
+@media(min-width:666px){
+    .carousel-img__1{
+        width: 100%;
+        height: 100%;
+    }
+}
+@media(min-width:900px){
+    .carousel-img__1{
+        width: 100%;
+        height: 500px !important;
+    }
+}
+.carousel__contenedor{
+    position: relative;
+}
+@media(min-width:900px){
+    .carousel__contenedor{
+        position: relative;
+        height: 100%;
+    }
+    .carousel__indicadores{
+        position: relative;
+        bottom: 40px;
+    }
+}
+
+.carousel__anterior,
+.carousel__siguiente{
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 30px;
+    color: #fff;
+    opacity: 80%;
+    border: none;
+    top: calc(50% - 35px);
+    background: none;
+    text-align: center;
+    font-size: 30px;
+}
+@media(min-width:900px){
+    .carousel__anterior,
+    .carousel__siguiente{
+        font-size: 50px;
+    }
+}
+.carousel__anterior{
+   
+    z-index: 10;
+    left: 1px;
+}
+.carousel__siguiente{
+    right: 1px;
+}
+
+
 .menu{
     margin-top: 60px;
     width: 94%;
@@ -104,29 +177,3 @@ text-align: center;
     width: 100%;
 }
 
-.carousel__contenedor{
-    position: relative;
-}
-.carousel__anterior,
-.carousel__siguiente{
-    position: absolute;
-    display: block;
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    top: calc(50% - 35px);
-    cursor: pointer;
-    line-height: 30px;
-    text-align: center;
-    background: none;
-    opacity: 50%;
-    z-index: 1;
-}
-.carousel__anterior{
-    z-index: 100;
-    left: 1px;
-}
-.carousel__siguiente{
-    right: 1px;
-}

@@ -11,6 +11,11 @@ nav.innerHTML = `
 </div>
 <img class="header-icono"  src="./imagenes/menu.png" alt="menú">
 
+<div id="header-nav" class="header-nav__primario">
+    <a class="header-nav__primario-link" href="#menu-display">Menú</a>
+    <a class="header-nav__primario-link" href="#ubicacion-display">Ubicación</a>
+    <a class="header-nav__primario-link" href="#footer-display">Contacto</a>
+</div>
 <div id="header-nav" class="header-nav">
     <a class="header-nav__link" href="#menu-display">Menú</a>
     <a class="header-nav__link" href="#ubicacion-display">Ubicación</a>
