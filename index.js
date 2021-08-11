@@ -23,7 +23,7 @@ const a = template.querySelector(".a")
 
 a.href = "/" + data.tipo
 titulo.textContent = data.tipo
-img.src = `./imagenes/${data.tipo}.jpg`
+img.src = `./imagenes/${data.tipo.toLowerCase()}.jpg`
 
 const clone = template.cloneNode(true)
 contenedor.appendChild(clone)
