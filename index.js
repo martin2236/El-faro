@@ -18,9 +18,13 @@ function agregarSubMenu(data){
 const contenedor = document.querySelector(".menu-container__cards")
 const template = document.querySelector(".submenu").content
 const titulo = template.querySelector(".card-h4")
+const img = template.querySelector(".card__img")
 const a = template.querySelector(".a")
+
 a.href = "/" + data.tipo
 titulo.textContent = data.tipo
+img.src = `./imagenes/${data.tipo}.jpg`
+
 const clone = template.cloneNode(true)
 contenedor.appendChild(clone)
 
@@ -56,7 +60,7 @@ botonMenu.addEventListener("click",(e)=>{
 contenedor.addEventListener("touchmove",(e)=>{
     e.stopPropagation()
         if(menuOculto.style.display == "inherit" ){
-            return menuOculto.style.cssText = "display:none; transition: .9s;"
+            return menuOculto.style.cssText = "display:none;"
         }
 })
 
