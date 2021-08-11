@@ -29,19 +29,3 @@ grid-column: 2/3;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.a{ 
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    border-left: solid 4px #755959;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #fff;
-}
-.triangulo{
-    width: 30px;
-    height: 30px;
-}

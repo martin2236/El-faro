@@ -2,6 +2,7 @@ function getContentful(){
 return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/master/content_types?access_token=BIKLyw8bHobEupEDPoOGm27ZVh9Iqi7LQfA5s313as4")
 .then(response => response.json())
 .then(data => {
+    console.log(data)
     const subMenu = data.items.map((items)=>{
         return{
             tipo:items.name

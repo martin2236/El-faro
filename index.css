@@ -14,89 +14,6 @@
     width: 100%;
 }
 
-
-.carousel{
-    margin-top: 30px;
-    width: 346px;
-    height: 335px;
-}
-@media(min-width:666px){
-    .carousel{
-        margin-top: 30px;
-        width: 80%;
-        height: 335px;
-    }
-    
-}
-@media(min-width:900px){
-    .carousel{
-        margin-top: 30px;
-        width: 80%;
-        height: 535px;
-    }
-}
-
-.carousel-img__1{
-    width: 346px;
-    height: 335px;
-}
-@media(min-width:666px){
-    .carousel-img__1{
-        width: 100%;
-        height: 100%;
-    }
-}
-@media(min-width:900px){
-    .carousel-img__1{
-        width: 100%;
-        height: 500px !important;
-    }
-}
-.carousel__contenedor{
-    position: relative;
-}
-@media(min-width:900px){
-    .carousel__contenedor{
-        position: relative;
-        height: 100%;
-    }
-    .carousel__indicadores{
-        position: relative;
-        bottom: 40px;
-    }
-}
-
-.carousel__anterior,
-.carousel__siguiente{
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 30px;
-    color: #fff;
-    opacity: 80%;
-    border: none;
-    top: calc(50% - 35px);
-    background: none;
-    text-align: center;
-    font-size: 30px;
-}
-@media(min-width:900px){
-    .carousel__anterior,
-    .carousel__siguiente{
-        font-size: 50px;
-    }
-}
-.carousel__anterior{
-   
-    z-index: 10;
-    left: 1px;
-}
-.carousel__siguiente{
-    right: 1px;
-}
-
-
 .menu{
     margin-top: 60px;
     width: 94%;
@@ -131,6 +48,19 @@ a{
     height: 411px;
     padding-bottom: 10px;
 }
+@media(min-width:900px){
+    .menu-container__cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 10px;
+        width: 94%;
+        background-color: #755959;
+        overflow: auto;
+        height: 411px;
+        padding-bottom: 10px;
+    }
+}
 .card{
     margin-top: 15px;
     margin-bottom: 0;
@@ -144,7 +74,18 @@ a{
     align-items: center;
     justify-content: center;
 }
-
+@media(min-width:900px){
+    .card{
+        display: flex;
+        margin-top: 15px;
+        margin-bottom: 0;
+        width: 20%;
+        height: 330px;
+        border-radius: 15px;
+        background-color: #fff;
+        color: #000;
+    }
+}
 .card-h4{
 grid-column: 1/2;
 font-size: 24px;
@@ -156,6 +97,26 @@ margin: 0 auto;
 grid-column: 2/3;
 color: #000;
 text-align: center;
+}
+.a{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-left: solid 4px #755959;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #fff;
+}
+@media(min-width:900px){
+    .a{ 
+       display: none;
+    }
+}
+.triangulo{
+    width: 30px;
+    height: 30px;
 }
 .ubicacion{
     width: 94%;
