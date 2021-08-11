@@ -5,7 +5,8 @@ return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/mast
     console.log(data)
     const subMenu = data.items.map((items)=>{
         return{
-            tipo:items.name
+            tipo:items.name,
+            descripcion: items.description
         }
     })
     return subMenu
@@ -18,11 +19,13 @@ function agregarSubMenu(data){
 const contenedor = document.querySelector(".menu-container__cards")
 const template = document.querySelector(".submenu").content
 const titulo = template.querySelector(".card-h4")
+const descripcion = template.querySelector(".card__descripcion")
 const img = template.querySelector(".card__img")
 const a = template.querySelector(".a")
-
+console.log(data.descripcion)
 a.href = "/" + data.tipo
 titulo.textContent = data.tipo
+descripcion.textContent = data.descripcion;
 img.src = `./imagenes/${data.tipo.toLowerCase()}.jpg`
 
 const clone = template.cloneNode(true)
