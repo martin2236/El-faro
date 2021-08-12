@@ -2,7 +2,6 @@ function getContentful(){
 return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/master/content_types?access_token=BIKLyw8bHobEupEDPoOGm27ZVh9Iqi7LQfA5s313as4")
 .then(response => response.json())
 .then(data => {
-    console.log(data)
     const subMenu = data.items.map((items)=>{
         return{
             tipo:items.name,
@@ -22,17 +21,36 @@ const titulo = template.querySelector(".card-h4")
 const descripcion = template.querySelector(".card__descripcion")
 const img = template.querySelector(".card__img")
 const a = template.querySelector(".a")
-console.log(data.descripcion)
-a.href = "/" + data.tipo
+const linkDescktop = template.querySelector(".card__link-full")
+
+a.href = "./" + data.tipo +".html"
 titulo.textContent = data.tipo
 descripcion.textContent = data.descripcion;
 img.src = `./imagenes/${data.tipo.toLowerCase()}.jpg`
+linkDescktop.href = "/" + data.tipo +".html"
+
 
 const clone = template.cloneNode(true)
 contenedor.appendChild(clone)
-
+return contenedor
 }
 
+// evita que la el orden se modifique despues de hacer cambios en contentful
+function Ordenar(submenu){
+    const listaOrdenada = submenu.sort(function(a, b) {
+        var nameA = a.tipo.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.tipo.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+      
+        return 0;
+      });
+      return listaOrdenada
+}
 
 
 
@@ -46,11 +64,13 @@ const contenedor = document.querySelector(".container")
 
 //envia la data de contentful para crear los sub menus
 getContentful().then((submenu)=>{
+ 
+    Ordenar(submenu)
         for (const r of submenu){
             agregarSubMenu(r)
         }
 })
-//botones menu mobile
+//botones menu oculto mobile
 botonMenu.addEventListener("click",(e)=>{
     e.stopPropagation()
     if(menuOculto.style.display == "none" ){
@@ -59,13 +79,14 @@ botonMenu.addEventListener("click",(e)=>{
         return menuOculto.style.display = "none"
     }
 })
-
+// cierra menu al desplazarce
 contenedor.addEventListener("touchmove",(e)=>{
     e.stopPropagation()
         if(menuOculto.style.display == "inherit" ){
             return menuOculto.style.cssText = "display:none;"
         }
 })
+
 
 }
 main()
