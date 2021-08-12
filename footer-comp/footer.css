@@ -18,6 +18,11 @@ grid-column: 1/2;
 .footer-contacto__div--link{
     padding-left: 10px;
 }
+@media(min-width:900px){
+    .footer-contacto__div--link{
+        margin-left: 40%;
+    }
+}
 .footer-horarios{
 grid-column: 2/3;
 }

@@ -1,5 +1,6 @@
 function mainMenu(){
 crearNav();
+crearUbicacion()
 crearFooter()
 const botonMenu = document.querySelector(".header-icono")
 const menuOculto = document.querySelector(".header-nav")

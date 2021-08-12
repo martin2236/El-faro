@@ -35,11 +35,12 @@ window.addEventListener("load",function(){
         slidesToShow: 1,
         dots: '#indicadores',
         draggable: false,
+   
         arrows: {
           prev: '.carousel__anterior',
           next: '.carousel__siguiente'
         }
-    })
+     })
     })
   
 }
