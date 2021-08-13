@@ -13,7 +13,7 @@ return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/mast
 
 }
 
-//agrega los submenus y los hrefs
+//agrega los submenus y los hrefs de los links
 function agregarSubMenu(data){
 const contenedor = document.querySelector(".menu-container__cards")
 const template = document.querySelector(".submenu").content
@@ -35,7 +35,7 @@ contenedor.appendChild(clone)
 return contenedor
 }
 
-// evita que la el orden se modifique despues de hacer cambios en contentful
+// evita que el orden de los sub-menus se modifique despues de hacer cambios en contentful
 function Ordenar(submenu){
     const listaOrdenada = submenu.sort(function(a, b) {
         var nameA = a.tipo.toUpperCase(); // ignore upper and lowercase
@@ -80,7 +80,7 @@ botonMenu.addEventListener("click",(e)=>{
         return menuOculto.style.display = "none"
     }
 })
-// cierra menu al desplazarce
+// cierra menu mobile al desplazarce
 contenedor.addEventListener("touchmove",(e)=>{
     e.stopPropagation()
         if(menuOculto.style.display == "inherit" ){
