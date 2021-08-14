@@ -27,7 +27,7 @@ a.href = "./" + data.tipo +".html"
 titulo.textContent = data.tipo
 descripcion.textContent = data.descripcion;
 img.src = `./imagenes/${data.tipo.toLowerCase()}.jpg`
-linkDescktop.href = "/" + data.tipo +".html"
+linkDescktop.href = "/" + data.tipo 
 
 
 const clone = template.cloneNode(true)
