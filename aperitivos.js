@@ -21,14 +21,20 @@ return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/mast
 
 }
 
-//agrega los submenus 
+//crea los templates
 
 function agregarSubMenu(data){
+  
    const contenedor = document.querySelector(".menu__aperitivos")
    const template = document.querySelector(".template").content
    var titulos = template.querySelector(".menu__aperitivos-sub--titulo")
-   titulos.textContent = data.subMenu
- 
+  
+    //agrega los sub menus
+   if (data.hasOwnProperty("subMenu")){
+       titulos.textContent = data.subMenu
+   }else{
+       return false
+   }
     const clone = template.cloneNode(true)
     contenedor.appendChild(clone)
 }
@@ -36,6 +42,18 @@ function agregarSubMenu(data){
 //agrega los productos
 function agregarProductos(data){
 console.log(data)
+const contenedor = document.querySelector(".menu__aperitivos-sub")
+const template2 = document.querySelector(".card-template").content
+const card = template2.querySelector(".card")
+const titulo = template2.querySelector(".card-h4")
+const descripcion = template2.querySelector(".card__descripcion")
+const precio = template2.querySelector(".card__precio")
+
+titulo.textContent = data.titulo
+descripcion.textContent = data.descripcion
+precio.textContent = data.precio
+const clone = template2.cloneNode(true)
+contenedor.appendChild(clone)
 
 }
 
@@ -75,10 +93,11 @@ getContentful().then((submenu)=>{
         }
         for (const p of submenu[1]){
             if (p.clase !== undefined){
-                 agregarProductos(p)
-            }
+                if(p.clase == "aperitivo"){
+                    agregarProductos(p)
+                }
+            } 
         }
-
 })
 
 //botones menu oculto mobile
