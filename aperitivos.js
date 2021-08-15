@@ -41,7 +41,7 @@ function agregarSubMenu(data){
 
 //agrega los productos
 function agregarProductos(data){
-console.log(data)
+
 const contenedor = document.querySelector(".menu__aperitivos-sub")
 const template2 = document.querySelector(".card-template").content
 const card = template2.querySelector(".card")
@@ -86,19 +86,30 @@ const contenedor = document.querySelector(".container")
 
 //envia la data de contentful para crear los sub menus y productos
 getContentful().then((submenu)=>{
-        for (const s of submenu[0]){
-            if (s.subMenu !== undefined){
-                 agregarSubMenu(s)
-            }
-        }
-        for (const p of submenu[1]){
-            if (p.clase !== undefined){
-                if(p.clase == "aperitivo"){
-                    agregarProductos(p)
-                }
-            } 
-        }
+  var menus = submenu[0].filter((item)=>{
+      return item.subMenu !== undefined
+  })
+  var productos = submenu[1].filter((item)=>{
+     return item.clase !== undefined
 })
+ 
+        for (const s of menus){
+            var algo = productos.filter((items)=>{
+                return items.tipo.toLowerCase() == s.subMenu.toLowerCase()
+            })
+            console.log( algo)
+            
+            
+        }
+        // for (const p of submenu[1]){
+        //     if (p.clase !== undefined){
+        //         if(p.clase == "aperitivo"){
+        //             agregarProductos(p)
+        //         }
+        //     } 
+        // }
+})
+
 
 //botones menu oculto mobile
 botonMenu.addEventListener("click",(e)=>{
