@@ -14,7 +14,7 @@ return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/mast
                 titulo:items.fields.titulo,
                 descripcion: items.fields.descripcion,
                 precio:items.fields.precio
-        }
+            }
     })
    return [subMenu, productos]
 });
@@ -24,45 +24,28 @@ return  fetch(" https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/mast
 //crea los templates
 
 function agregarSubMenu(data){
-  
+  // console.log(data)
    const contenedor = document.querySelector(".menu__aperitivos")
    const template = document.querySelector(".template").content
-   var titulos = template.querySelector(".menu__aperitivos-sub--titulo")
-  
-    //agrega los sub menus
-   if (data.hasOwnProperty("subMenu")){
-       titulos.textContent = data.subMenu
-   }else{
-       return false
-   }
+    var titulos = template.querySelector(".menu__aperitivos-sub--titulo")
+    var cardH4 = template.querySelector(".card-h4")
+    var tipo = data[0].tipo
+    var tipoMayus = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+    
+    titulos.textContent = tipoMayus
+    cardH4.textContent = data.map((item)=>{return item.titulo})
+
+    
     const clone = template.cloneNode(true)
     contenedor.appendChild(clone)
-}
-
-//agrega los productos
-function agregarProductos(data){
-
-const contenedor = document.querySelector(".menu__aperitivos-sub")
-const template2 = document.querySelector(".card-template").content
-const card = template2.querySelector(".card")
-const titulo = template2.querySelector(".card-h4")
-const descripcion = template2.querySelector(".card__descripcion")
-const precio = template2.querySelector(".card__precio")
-
-titulo.textContent = data.titulo
-descripcion.textContent = data.descripcion
-precio.textContent = data.precio
-const clone = template2.cloneNode(true)
-contenedor.appendChild(clone)
-
 }
 
 // evita que el orden de los sub-menus se modifique despues de hacer cambios en contentful
 
 function Ordenar(submenu,){
     const listaOrdenada = submenu.sort(function(a, b) {
-        var nameA = a.tipo.toUpperCase(); // ignore upper and lowercase
-        var nameB = b.tipo.toUpperCase(); // ignore upper and lowercase
+        var nameA = a.subMenu.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.subMenu.toUpperCase(); // ignore upper and lowercase
         if (nameA < nameB) {
           return -1;
         }
@@ -86,28 +69,27 @@ const contenedor = document.querySelector(".container")
 
 //envia la data de contentful para crear los sub menus y productos
 getContentful().then((submenu)=>{
+
   var menus = submenu[0].filter((item)=>{
       return item.subMenu !== undefined
   })
   var productos = submenu[1].filter((item)=>{
      return item.clase !== undefined
 })
- 
+
+Ordenar(menus)
+
+//organiza los productos por tipo
         for (const s of menus){
-            var algo = productos.filter((items)=>{
-                return items.tipo.toLowerCase() == s.subMenu.toLowerCase()
-            })
-            console.log( algo)
-            
-            
-        }
-        // for (const p of submenu[1]){
-        //     if (p.clase !== undefined){
-        //         if(p.clase == "aperitivo"){
-        //             agregarProductos(p)
-        //         }
-        //     } 
-        // }
+        var productosListados = productos.filter((items)=>{
+        return items.tipo.toLowerCase() == s.subMenu.toLowerCase()
+        })
+        const aperitivosProd = productosListados.filter((item)=>{
+            return item.clase.toLowerCase() === "aperitivo"
+        })
+        console.log(aperitivosProd)
+        agregarSubMenu(productosListados)
+    }
 })
 
 
