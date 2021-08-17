@@ -39,25 +39,23 @@ return  fetch("https://cdn.contentful.com/spaces/uq7529l1n1cl/environments/maste
 //crea los subMenus
 function agregarSubMenu(data){
 const contenedor = document.querySelector(".menu__aperitivos")
-const template = document.querySelector(".template").content
-var titulos = template.querySelector(".menu__aperitivos-sub--titulo")
+const templates = document.querySelector(".template").content
+var titulos = templates.querySelector(".menu__aperitivos-sub--titulo")
  titulos.textContent = data.subMenu
- const clone = template.cloneNode(true)
+ const clone = templates.cloneNode(true)
  contenedor.appendChild(clone)
 }
 //crea las cards
 function agregarProducto(data){
-  console.log(data)
-   const contenedor = document.querySelector(".menu__aperitivos")
-   const template = document.querySelector(".template").content
-   const cardH4 = template.querySelector(".card-h4")
+    const contenedor = document.querySelector(".menu__aperitivos")
+   const template = document.querySelector(".cards").content
+    const cardH4 = template.querySelector(".card-h4")
    const imagen = template.querySelector(".card__img")
    const descripcion = template.querySelector(".card__descripcion")
    const linkDescrip = template.querySelector(".card__link-full")
    const precio = template.querySelector(".card__precio")
-
-    var tipo = data.titulo
-    var tipoMayus = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+     var tipo = data.titulo
+     var tipoMayus = tipo.charAt(0).toUpperCase() + tipo.slice(1);
     
     imagen.src = data.imagen
     cardH4.textContent = tipoMayus
@@ -80,12 +78,24 @@ function Ordenar(submenu,){
         if (nameA > nameB) {
           return 1;
         }
-      
         return 0;
       });
       return listaOrdenada
 }
-
+function OrdenarProd(producto,){
+    const listaOrdenada = producto.sort(function(a, b) {
+        var nameA = a.clase.toUpperCase(); // ignore upper and lowercase
+        var nameB = b.clase.toUpperCase(); // ignore upper and lowercase
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
+        return 0;
+      });
+      return listaOrdenada
+}
 
 function mainMenu(){
 crearNav();
@@ -99,17 +109,20 @@ const contenedor = document.querySelector(".container")
 getSubMenus().then((submenu)=>{
     Ordenar(submenu)
 for(const s of submenu){
-    agregarSubMenu(s)
+  agregarSubMenu(s)
 }
+
 })
 //envia la data de contentful para pintar los productos
 getProductos().then((producto)=>{
 const aperitivos = producto.filter((items)=>{
     return items.tipo.toLowerCase() === "aperitivo"
 })
+    OrdenarProd(aperitivos)
         for (const a of aperitivos){
         agregarProducto(a)
         }
+        
 })
 
 
