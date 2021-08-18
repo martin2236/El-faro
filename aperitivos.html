@@ -17,37 +17,39 @@
 <body>
     <div class="container">
         <div class="contenedor"></div>
+            
         <div class="menu">
-            <div class="menu__opciones">
-            <h3 class="menu__opciones-h3">Aperitivos</h3>
-            <a class="menu__opciones-link" href="">Bebidas</a>
-            <a class="menu__opciones-link" href="">Principales</a>
-            <a class="menu__opciones-link" href="">Postres</a>
-        </div>
-         <div class="menu__aperitivos">
+
+                <div class="menu__opciones">
+                    <h3 class="menu__opciones-h3">Aperitivos</h3>
+                    <a class="menu__opciones-link" href="">Bebidas</a>
+                    <a class="menu__opciones-link" href="">Principales</a>
+                    <a class="menu__opciones-link" href="">Postres</a>
+                </div>
+         
+            <div class="menu__aperitivos">
                <template class="template">
                     <div class="menu__aperitivos-sub">
-                        <h2 class="menu__aperitivos-sub--titulo">Creps</h2>
+                        <a class="menu__aperitivos-link" href=""><h2 class="menu__aperitivos-sub--titulo">Creps</h2></a>
                     </div> 
-                 </template>
-                <template class="cards">
+                </template>
+            </div>  
+
+             <div class="card__cont"> 
+                 <template class="cards">
                     <div class="card">
                         <img class="card__img" src="./imagenes/Aperitivos.jpg" alt="">
                         <p class="card-h4">Crepe banana split </p>
-                        <a  class="card__link-full" href="#Crepe banana split">Descripcion</a>
                         <p id="Crepe banana split" class="card__descripcion">Crepe de dulce de leche con banana (o solo) </p>
                         <p class="card__precio"> $380</p>
                     </div>
-                </template>    
-               
-            </div>   
-           
-         
+                </template>  
+            </div>
+              
             <section id="ubicacion-display" class="ubicacion"> </section>
-        <div class="footer-cont"></div>
-       
-
-    </div>
+            <div class="footer-cont"></div>
+            
+        </div>
 
 </body>
 </html>

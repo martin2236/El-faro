@@ -41,29 +41,35 @@ function agregarSubMenu(data){
 const contenedor = document.querySelector(".menu__aperitivos")
 const templates = document.querySelector(".template").content
 var titulos = templates.querySelector(".menu__aperitivos-sub--titulo")
+var links = templates.querySelector(".menu__aperitivos-link")
  titulos.textContent = data.subMenu
+ links.href = data.subMenu.toLowerCase()
  const clone = templates.cloneNode(true)
+ clone.firstElementChild.addEventListener("click",(e)=>{
+  e.preventDefault()
+})
  contenedor.appendChild(clone)
 }
 //crea las cards
 function agregarProducto(data){
-    const contenedor = document.querySelector(".menu__aperitivos")
+    const contenedor = document.querySelector(".card__cont")
    const template = document.querySelector(".cards").content
     const cardH4 = template.querySelector(".card-h4")
    const imagen = template.querySelector(".card__img")
    const descripcion = template.querySelector(".card__descripcion")
-   const linkDescrip = template.querySelector(".card__link-full")
+  
    const precio = template.querySelector(".card__precio")
      var tipo = data.titulo
      var tipoMayus = tipo.charAt(0).toUpperCase() + tipo.slice(1);
     
     imagen.src = data.imagen
     cardH4.textContent = tipoMayus
-    descripcion.textcontent = data.descripcion
-    linkDescrip.id = tipoMayus
+    descripcion.textContent = data.descripcion
+    descripcion.href = tipoMayus
     precio.textContent = data.precio
 
     const clone = template.cloneNode(true)
+    
     contenedor.appendChild(clone)
 }
 
