@@ -113,7 +113,7 @@ a{
    justify-content: center;
    background-repeat: no-repeat;
    background-attachment: fixed;
-  
+   background-position: left;
 }
 .img-cont__p{
 height: 75px;
