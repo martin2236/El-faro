@@ -55,7 +55,29 @@ function Ordenar(submenu,){
       });
       return listaOrdenada
 }
-
+function mostrarMenu(tag){
+  const aperitivos = document.querySelector(".menu__aperitivos")
+  const bebidas = document.querySelector(".menu__bebidas")
+  const principales = document.querySelector(".menu__principales")
+  const postres = document.querySelector(".menu__postres")
+  console.log(postres)
+  tag.forEach((item)=>{
+       item.addEventListener("click",(e)=>{
+         e.preventDefault()
+         console.log(item.textContent)
+        if(item.textContent == "Aperitivos"){
+          aperitivos.style.zIndex = "1000"
+          bebidas.style.zIndex = "500"
+          principales.style.zIndex = "400"
+          postres.style.zIndex = "300"
+        } else if (item.textContent == "Bebidas"){
+          bebidas.style.zIndex = "1000"
+          aperitivos.style.zIndex = "500"
+        } 
+  })
+    })
+ 
+}
 function main(){
 crearCarousel()
 crearNav()
@@ -72,6 +94,9 @@ for(const s of submenu){
 const botonMenu = document.querySelector(".header-icono")
 const menuOculto = document.querySelector(".header-nav")
 const contenedor = document.querySelector(".container")
+const subMenuBTN = document.querySelectorAll(".menu__sub-menus-link")
+
+mostrarMenu(subMenuBTN)
 
 //botones menu oculto mobile
 botonMenu.addEventListener("click",(e)=>{

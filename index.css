@@ -49,8 +49,12 @@ a{
     align-items: center;
 }
 .menu__aperitivos{
+    position: absolute;
+    background-color: #fff;
+    margin-top: 35px;
+    z-index: 400;
     width: 375px;
-    height: 450px;
+    height: 400px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;
@@ -103,6 +107,41 @@ a{
 .menu-h2{
     font-size: 36px;
     font-weight: 700;
+}
+
+.menu__bebidas{
+    margin-top: 15px;
+    position: relative;
+    background-color: aquamarine;
+    width: 375px;
+    height: 450px;
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row;
+    overflow-y:auto ; 
+    z-index: 300;
+}
+.menu__principales{
+    position: relative;
+    background-color:blueviolet;
+    width: 375px;
+    height: 450px;
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row;
+    overflow-y:auto ; 
+    z-index: 200;
+}
+.menu__postres{
+    position: relative;
+    background-color:crimson;
+    width: 375px;
+    height: 450px;
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row;
+    overflow-y:auto ; 
+    z-index: 100;
 }
 .img-cont{
     width: 100%;
