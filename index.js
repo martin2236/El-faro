@@ -73,7 +73,19 @@ function mostrarMenu(tag){
         } else if (item.textContent == "Bebidas"){
           bebidas.style.zIndex = "1000"
           aperitivos.style.zIndex = "500"
-        } 
+          principales.style.zIndex = "400"
+          postres.style.zIndex = "300"
+        } else if (item.textContent == "Principales"){
+          principales.style.zIndex = "1000"
+          aperitivos.style.zIndex = "500"
+          bebidas.style.zIndex = "400"
+          postres.style.zIndex = "300"
+        } else if (item.textContent == "Postres"){
+          postres.style.zIndex = "1000"
+          aperitivos.style.zIndex = "500"
+          principales.style.zIndex = "400"
+          bebidas.style.zIndex = "300"
+        }
   })
     })
  
