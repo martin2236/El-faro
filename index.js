@@ -89,7 +89,7 @@ contenedor.addEventListener("touchmove",(e)=>{
             return menuOculto.style.cssText = "display:none;"
         }
 })
-
+//borrar
 
 }
 main()
