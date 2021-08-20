@@ -3,8 +3,9 @@ function getSubMenus(){
     .then(response => response.json())
     .then(data => {
         var subMenu = data.items.map((items)=>{
-          const img = buscarImagen(items.fields.imagen.sys.id, data)
+         const img = buscarImagen(items.fields.imagen.sys.id, data)
             return{
+                tipo:items.fields.tipo,
                 subMenu:items.fields.tipoDeSubMenu,
                 imagen: img.fields.file.url,
                 descripcion: items.fields.descripcion,
@@ -21,8 +22,8 @@ function buscarImagen(id, datos){
            return asset.sys.id == id; });
           return imagen 
 }
-//crea los subMenus
-function agregarSubMenu(data){
+//crea los aperitivos
+function agregarAperitivos(data){
     const contenedor = document.querySelector(".menu__aperitivos")
     const templates = document.querySelector(".template").content
     var titulos = templates.querySelector(".menu__aperitivos-sub-titulo")
@@ -33,13 +34,65 @@ function agregarSubMenu(data){
     descripcion.textContent= data.descripcion
      numero.textContent = "0" + data.posicion + "."
      titulos.textContent = data.subMenu
- 
-     const clone = templates.cloneNode(true)
+    const clone = templates.cloneNode(true)
      clone.firstElementChild.addEventListener("click",(e)=>{
       e.preventDefault()
     })
      contenedor.appendChild(clone)
 }
+function agregarBebidas(data){
+  const contenedor = document.querySelector(".menu__bebidas")
+  const templates = document.querySelector(".template-2").content
+  const titulos = templates.querySelector(".menu__bebidas-sub-titulo")
+  const numero = templates.querySelector(".menu__numero")
+  const descripcion = templates.querySelector(".menu__descripcion")
+  const imagen = templates.querySelector(".menu__img")
+  imagen.src = data.imagen
+  descripcion.textContent= data.descripcion
+   numero.textContent = "0" + data.posicion + "."
+   titulos.textContent = data.subMenu
+  const clone = templates.cloneNode(true)
+   clone.firstElementChild.addEventListener("click",(e)=>{
+    e.preventDefault()
+  })
+   contenedor.appendChild(clone)
+}
+function agregarPrincipales(data){
+  const contenedor = document.querySelector(".menu__principales")
+  const templates = document.querySelector(".template-3").content
+  const titulos = templates.querySelector(".menu__principales-sub-titulo")
+  const numero = templates.querySelector(".menu__numero")
+  const descripcion = templates.querySelector(".menu__descripcion")
+  const imagen = templates.querySelector(".menu__img")
+  imagen.src = data.imagen
+  descripcion.textContent= data.descripcion
+   numero.textContent = "0" + data.posicion + "."
+   titulos.textContent = data.subMenu
+  const clone = templates.cloneNode(true)
+   clone.firstElementChild.addEventListener("click",(e)=>{
+    e.preventDefault()
+  })
+   contenedor.appendChild(clone)
+}
+function agregarPostres(data){
+  console.log(data)
+  const contenedor = document.querySelector(".menu__postres")
+  const templates = document.querySelector(".template-4").content
+  const titulos = templates.querySelector(".menu__postres-sub-titulo")
+  const numero = templates.querySelector(".menu__numero")
+  const descripcion = templates.querySelector(".menu__descripcion")
+  const imagen = templates.querySelector(".menu__img")
+  imagen.src = data.imagen
+  descripcion.textContent= data.descripcion
+   numero.textContent = "0" + data.posicion + "."
+   titulos.textContent = data.subMenu
+  const clone = templates.cloneNode(true)
+   clone.firstElementChild.addEventListener("click",(e)=>{
+    e.preventDefault()
+  })
+   contenedor.appendChild(clone)
+}
+
 
 function Ordenar(submenu,){
     const listaOrdenada = submenu.sort(function(a, b) {
@@ -61,7 +114,6 @@ function mostrarMenu(tag){
   const bebidas = document.querySelector(".menu__bebidas")
   const principales = document.querySelector(".menu__principales")
   const postres = document.querySelector(".menu__postres")
-  console.log(postres)
   tag.forEach((item)=>{
        item.addEventListener("click",(e)=>{
          e.preventDefault()
@@ -91,6 +143,7 @@ function mostrarMenu(tag){
     })
  
 }
+
 function main(){
 crearCarousel()
 crearNav()
@@ -99,9 +152,34 @@ crearFooter()
 
 getSubMenus().then((submenu)=>{
     Ordenar(submenu)
-for(const s of submenu){
-  agregarSubMenu(s)
-}
+  
+    aperitivos = submenu.filter((item)=>{
+      return item.tipo == "Aperitivos"
+      })
+      for(const a of aperitivos){
+          agregarAperitivos(a)
+        }
+      
+      bebidas = submenu.filter((item)=>{
+        return item.tipo == "Bebidas"
+        })
+        for(const b of bebidas){
+          agregarBebidas(b)
+        }
+      principales = submenu.filter((item)=>{
+        return item.tipo == "Principales"
+        })
+        for(const p of principales){
+          agregarPrincipales(p)
+        }
+        postres = submenu.filter((item)=>{
+          return item.tipo == "Postres"
+          })
+          for(const p of postres){
+            agregarPostres(p)
+          }
+        
+
 
 })
 const botonMenu = document.querySelector(".header-icono")

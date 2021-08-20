@@ -18,15 +18,13 @@ a{
 }
 
 .menu{
-   
-    width: 100%;
+   width: 100%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 560px;
-  
 }
 @media(min-width:666px){
     .menu{
@@ -53,14 +51,17 @@ a{
     background-color: #fff;
     margin-top: 35px;
     z-index: 400;
-    width: 375px;
+    width: 100%;
     height: 400px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;
     overflow-y:auto ; 
 }
-.menu__aperitivos-sub{
+.menu__aperitivos-sub,
+.menu__bebidas-sub,
+.menu__principales-sub,
+.menu__postres-sub{
     flex: 0 0 auto;
     width: 375px;
     font-size: 16px;
@@ -80,18 +81,20 @@ a{
     display: inline;
     font-size: 26px;
     font-weight: 700;
-     margin-left: 15px;
+     margin-left: 40px;
 }
-.menu__aperitivos-sub-titulo{
+.menu__aperitivos-sub-titulo,
+.menu__bebidas-sub-titulo,
+.menu__principales-sub-titulo,
+.menu__postres-sub-titulo{
     display: inline;
     font-size: 24px;
     font-weight: 500;
 }
 .menu__descripcion{
-    width: 350px;
+    width: 80%;
     height: 50px;
-    margin-left: auto;
-    margin-right: auto;
+   margin-left: 40px;
 }
 .menu__link{
     height: 55px;
@@ -110,22 +113,22 @@ a{
 }
 
 .menu__bebidas{
-    margin-top: 35px;
     position: absolute;
-    background-color: aquamarine;
-    width: 375px;
+    background-color: #fff;
+    margin-top: 35px;
+    width: 100%;
+     overflow-y:auto ; 
     height: 400px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;
-    overflow-y:auto ; 
     z-index: 300;
 }
 .menu__principales{
     margin-top: 35px;
     position: absolute;
-    background-color:blueviolet;
-    width: 375px;
+    background-color:#fff;
+    width: 100%;
     height: 400px;
     display: flex;
     margin-bottom: 15px;
@@ -135,8 +138,8 @@ a{
 }
 .menu__postres{
     position: relative;
-    background-color:crimson;
-    width: 375px;
+    background-color:#fff;
+    width: 100%;
     height: 450px;
     display: flex;
     margin-bottom: 15px;
@@ -153,7 +156,7 @@ a{
    justify-content: center;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   background-position: left;
+   background-position: center;
 }
 .img-cont__p{
 height: 75px;
