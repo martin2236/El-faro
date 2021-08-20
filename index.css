@@ -110,11 +110,11 @@ a{
 }
 
 .menu__bebidas{
-    margin-top: 15px;
-    position: relative;
+    margin-top: 35px;
+    position: absolute;
     background-color: aquamarine;
     width: 375px;
-    height: 450px;
+    height: 400px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;
@@ -122,10 +122,11 @@ a{
     z-index: 300;
 }
 .menu__principales{
-    position: relative;
+    margin-top: 35px;
+    position: absolute;
     background-color:blueviolet;
     width: 375px;
-    height: 450px;
+    height: 400px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;

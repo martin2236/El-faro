@@ -55,6 +55,7 @@ function Ordenar(submenu,){
       });
       return listaOrdenada
 }
+//agrega interacción al menú
 function mostrarMenu(tag){
   const aperitivos = document.querySelector(".menu__aperitivos")
   const bebidas = document.querySelector(".menu__bebidas")
@@ -76,12 +77,12 @@ function mostrarMenu(tag){
           principales.style.zIndex = "400"
           postres.style.zIndex = "300"
         } else if (item.textContent == "Principales"){
-          principales.style.zIndex = "1000"
+         principales.style.zIndex = "1000"
           aperitivos.style.zIndex = "500"
           bebidas.style.zIndex = "400"
           postres.style.zIndex = "300"
         } else if (item.textContent == "Postres"){
-          postres.style.zIndex = "1000"
+         postres.style.zIndex = "1000"
           aperitivos.style.zIndex = "500"
           principales.style.zIndex = "400"
           bebidas.style.zIndex = "300"
