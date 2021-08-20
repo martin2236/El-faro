@@ -24,7 +24,7 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 560px;
+    height: 100vh;
 }
 @media(min-width:666px){
     .menu{
@@ -46,18 +46,31 @@ a{
     height: 40px;
     align-items: center;
 }
-.menu__aperitivos{
+.menu__aperitivos,
+.menu__principales,
+.menu__bebidas,
+.menu__postres{
     position: absolute;
     background-color: #fff;
-    margin-top: 35px;
+    margin-top: 50px;
     z-index: 400;
     width: 100%;
-    height: 400px;
+    height: 450px;
     display: flex;
     margin-bottom: 15px;
     flex-direction: row;
     overflow-y:auto ; 
 }
+.menu__principales{
+ z-index: 200;
+}
+.menu__postres{
+ z-index: 100;
+}
+.menu__bebidas{
+ z-index: 300;
+}
+
 .menu__aperitivos-sub,
 .menu__bebidas-sub,
 .menu__principales-sub,
@@ -103,40 +116,18 @@ a{
     font-weight: 700;
     border-radius: 15px;
     border: 4px solid #755959;
-    margin-bottom: 5px;
-    padding-top: 8px;
+   padding-top: 10px;
     text-align: center;
 }
 .menu-h2{
     font-size: 36px;
     font-weight: 700;
+    margin-bottom: 40px;
 }
 
-.menu__bebidas{
-    position: absolute;
-    background-color: #fff;
+
+.menu__fake{
     margin-top: 35px;
-    width: 100%;
-     overflow-y:auto ; 
-    height: 400px;
-    display: flex;
-    margin-bottom: 15px;
-    flex-direction: row;
-    z-index: 300;
-}
-.menu__principales{
-    margin-top: 35px;
-    position: absolute;
-    background-color:#fff;
-    width: 100%;
-    height: 400px;
-    display: flex;
-    margin-bottom: 15px;
-    flex-direction: row;
-    overflow-y:auto ; 
-    z-index: 200;
-}
-.menu__postres{
     position: relative;
     background-color:#fff;
     width: 100%;
@@ -145,11 +136,11 @@ a{
     margin-bottom: 15px;
     flex-direction: row;
     overflow-y:auto ; 
-    z-index: 100;
+    z-index: 50;
 }
 .img-cont{
     width: 100%;
-    height: 470px;
+    height: 100vh;
    background-image: url(./imagenes/cafe-divisor-1.jpg);
    display: flex;
    align-items: center;
@@ -157,6 +148,9 @@ a{
    background-repeat: no-repeat;
    background-attachment: fixed;
    background-position: center;
+}
+.ubicacion{
+    height: 100vh;
 }
 .img-cont__p{
 height: 75px;
@@ -169,7 +163,7 @@ text-align: center;
 }
 .img-cont-2{
     width: 100%;
-    height: 470px;
+    height: 100vh;
    background-image: url(./imagenes/cafe-divisor-2.jpg);
    background-repeat: no-repeat;
    background-attachment: fixed;
