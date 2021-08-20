@@ -52,8 +52,7 @@ a{
 .menu__bebidas,
 .menu__postres{
     position: absolute;
-    background-color: #755959;
-    margin-top: 20px;
+    background-color: #fff;
     z-index: 400;
     width: 100%;
     height: 400px;
