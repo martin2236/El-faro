@@ -48,6 +48,12 @@ a{
     align-items: center;
     margin-bottom: 40px;
 }
+@media(min-width:640px){
+    .menu__sub-menus{
+        height: 60px;
+        font-size: 18px;
+    }
+}
 
 .menu__aperitivos,
 .menu__principales,
@@ -69,7 +75,7 @@ a{
     .menu__bebidas,
     .menu__postres{
         height: 70%;
-        margin-top: 40px;
+        margin-top: 60px;
         margin-bottom: 10px;
     }
 }
@@ -211,6 +217,11 @@ a{
    padding-top: 10px;
     text-align: center;
     margin-bottom: 20px;
+}
+@media(min-width:640px){
+    .menu__link{
+       margin-bottom: 10px;
+    }
 }
 .menu-h2{
     font-size: 36px;
