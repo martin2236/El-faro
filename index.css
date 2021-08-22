@@ -170,7 +170,10 @@ a{
     font-weight: 500;
 }
 @media(min-width:640px){
-    .menu__postres-sub-titulo{
+    .menu__aperitivos-sub-titulo,
+.menu__bebidas-sub-titulo,
+.menu__principales-sub-titulo,
+.menu__postres-sub-titulo{
         grid-column: 2/3;
         grid-row: 1/2;
         display: inline;
