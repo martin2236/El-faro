@@ -38,6 +38,12 @@
     border: 4px solid #755959;
     height: 85%;
 }
+@media(min-width:666px){
+    .ubicacion__iframe{
+        height: 70%;
+    }
+  
+}
 @media(min-width:900px){
     .ubicacion__iframe{
         grid-column: 1/2;

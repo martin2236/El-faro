@@ -1,12 +1,11 @@
 .carousel{
-    width: 375px;
-    height: 470px;
+    width: 100%;
+    height: 85vh;
 }
 @media(min-width:666px){
     .carousel{
-        margin-top: 30px;
-        width: 80%;
-        height: 335px;
+        width: 100%;
+        height: 100%;
     }
     
 }
@@ -14,13 +13,29 @@
     .carousel{
         margin-top: 30px;
         width: 100%;
-        height: 535px;
+        height: 100%;
     }
 }
-
+.carousel__elemento{
+    width: 100%;
+}
+@media(min-width:666px){
+    .carousel__elemento {
+        width: 100%;
+        height: 100%;
+    }
+    .carousel__elemento{
+        width: 100%;
+        height: 100%;
+    }
+    .carousel__contenedor{
+        width: 100%;
+        height: 100%;
+    }
+}
 .carousel-img__1{
     width: 375px;
-    height: 470px;
+    height: 85vh;
 }
 @media(min-width:666px){
     .carousel-img__1{
@@ -48,7 +63,7 @@
     }
     .carousel__indicadores{
         position: relative;
-        bottom: 40px;
+       
     }
 }
 

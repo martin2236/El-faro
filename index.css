@@ -28,7 +28,7 @@ a{
 }
 @media(min-width:666px){
     .menu{
-        margin-top: 250px;
+        height: 120vh;
     }
 }
 @media(min-width:900px){
@@ -47,6 +47,7 @@ a{
     align-items: center;
     margin-bottom: 40px;
 }
+
 .menu__aperitivos,
 .menu__principales,
 .menu__bebidas,
@@ -55,19 +56,28 @@ a{
     background-color: #fff;
     z-index: 400;
     width: 100%;
-    height: 400px;
+    height: 60%;
     display: flex;
     margin-bottom: 30px;
     flex-direction: row;
     overflow-y:auto ; 
 }
+@media(min-width:666px){
+    .menu__aperitivos,
+    .menu__principales,
+    .menu__bebidas,
+    .menu__postres{
+        margin-top: 50px;
+        height: 60%;
+    }
+}
+
 .menu__fake{
     margin-top: 35px;
     position: relative;
     visibility: hidden;
     width: 100%;
     height: 400px;
-   
     z-index: 50;
 }
 .menu__principales{
@@ -96,6 +106,7 @@ a{
   margin-left: auto;
   margin-right: auto;
   width: 70%;
+  height: 50%;
   border-radius: 5px;
 
 }
