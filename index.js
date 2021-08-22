@@ -75,7 +75,6 @@ function agregarPrincipales(data){
    contenedor.appendChild(clone)
 }
 function agregarPostres(data){
-  console.log(data)
   const contenedor = document.querySelector(".menu__postres")
   const templates = document.querySelector(".template-4").content
   const titulos = templates.querySelector(".menu__postres-sub-titulo")
@@ -178,9 +177,6 @@ getSubMenus().then((submenu)=>{
           for(const p of postres){
             agregarPostres(p)
           }
-        
-
-
 })
 const botonMenu = document.querySelector(".header-icono")
 const menuOculto = document.querySelector(".header-nav")
@@ -204,8 +200,6 @@ contenedor.addEventListener("touchmove",(e)=>{
         if(menuOculto.style.display == "inherit" ){
             return menuOculto.style.cssText = "display:none;"
         }
-})
-//borrar
-
+  })
 }
 main()

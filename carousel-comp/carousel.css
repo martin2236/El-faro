@@ -78,9 +78,10 @@
     opacity: 80%;
     border: none;
     top: calc(50% - 35px);
-    background: none;
+    background: rgba(255, 255, 255, .8);
     text-align: center;
     font-size: 30px;
+    border-radius: 5px;
 }
 @media(min-width:900px){
     .carousel__anterior,
