@@ -25,7 +25,7 @@ div.innerHTML = `
        <i class="fas fa-chevron-right"></i>
    </button>
 </div>
-<div role="tablist" id="indicadores" class="carousel__indicadores"></div>
+
 
 `
 contenedor.appendChild(div) 

@@ -8,7 +8,6 @@
 }
 .header-logo{
     grid-column: 1/2;
-    
 }
 .header-container{
     grid-column: 2/3;
@@ -76,8 +75,9 @@ margin-top: 5px;
     margin-top: 30px;
     background-color: #fff;
      justify-content: space-evenly;
+     border-bottom-right-radius: 5px;
+     border-bottom-left-radius: 5px;
     align-items: center;
-    border-radius: 10px;
     display: none;
     z-index: 1000;
     border-bottom: 4px solid #755959;
